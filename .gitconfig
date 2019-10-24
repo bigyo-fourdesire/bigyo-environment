@@ -1,0 +1,22 @@
+[user]
+	email = bigyo.tseng@fourdesire.com
+	name = bigyo-fourdesire
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	lg = log --oneline --decorate --all --graph
+	# list all alias
+	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /	
+	# copy current branch name
+	cp = ! git branch | grep '^\\*' | cut -d' ' -f2 | pbcopy				
+
+[core]
+	excludesfile = /Users/user/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
