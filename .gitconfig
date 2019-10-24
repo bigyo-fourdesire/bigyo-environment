@@ -4,13 +4,26 @@
 [alias]
 	co = checkout
 	br = branch
+
+	# git push -u origin branch
+	pushOrigin = ! git push -u origin $(! git branch | grep '^\\*' | cut -d' ' -f2)
+	po = pushOrigin
+
+	# branch name
+	bn = ! echo $(! git branch | grep '^\\*' | cut -d' ' -f2)	
 	ci = commit
 	st = status
 	lg = log --oneline --decorate --all --graph
+
 	# list all alias
 	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /	
+
 	# copy current branch name
-	cp = ! git branch | grep '^\\*' | cut -d' ' -f2 | pbcopy				
+	cp = ! git branch | grep '^\\*' | cut -d' ' -f2 | pbcopy		
+
+	# git reset + git clean
+	resetClean = ! git reset --hard && git clean -f
+	rc = resetClean		
 
 [core]
 	excludesfile = /Users/user/.gitignore_global
