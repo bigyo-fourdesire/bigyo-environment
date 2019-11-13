@@ -25,6 +25,11 @@
 	resetClean = ! git reset --hard && git clean -f
 	rc = resetClean		
 
+	# find all branches include string
+	find = "!f() { git branch | grep ${1}; }; f"
+	findelete = "!f() { git branch | grep ${1} | xargs git branch -d; }; f"
+
+
 [core]
 	excludesfile = /Users/user/.gitignore_global
 [difftool "sourcetree"]
