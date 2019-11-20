@@ -29,6 +29,15 @@
 	find = "!f() { git branch | grep ${1}; }; f"
 	findelete = "!f() { git branch | grep ${1} | xargs git branch -d; }; f"
 
+	# stash
+	sl = stash list
+	ls = stash list
+	sa = stash apply
+	ap = stash apply
+	sd = stash drop
+	spo = stash pop
+	spu = stash push
+
 
 [core]
 	excludesfile = /Users/user/.gitignore_global
