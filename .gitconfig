@@ -41,7 +41,7 @@
 	# temporary ignore files
 	hide = update-index --assume-unchanged
 	unhide = update-index --no-assume-unchanged
-	unhide-all = update-index --really-refresh
+	unhide-all = !git ls-files -v | grep "^[a-z]" | cut -c 3- | xargs git unhide
 	hidden = !git ls-files -v | grep \"^[a-z]\"
 	ignored = !git status -s --ignored | grep \"^!!\"
 
