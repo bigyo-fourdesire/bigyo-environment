@@ -38,6 +38,13 @@
 	spo = stash pop
 	spu = stash push
 
+	# temporary ignore files
+	hide = update-index --assume-unchanged
+	unhide = update-index --no-assume-unchanged
+	unhide-all = update-index --really-refresh
+	hidden = !git ls-files -v | grep \"^[a-z]\"
+	ignored = !git status -s --ignored | grep \"^!!\"
+
 
 [core]
 	excludesfile = /Users/user/.gitignore_global
@@ -47,3 +54,8 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
