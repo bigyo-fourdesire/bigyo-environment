@@ -23,7 +23,7 @@
 
 	# git reset + git clean
 	resetClean = ! git reset --hard && git clean -f
-	rc = resetClean		
+	rc = !git resetClean && git unhide-all
 
 	# find all branches include string
 	find = "!f() { git branch | grep ${1}; }; f"
