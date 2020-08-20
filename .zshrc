@@ -127,3 +127,6 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
 # JAVA_HOME
 # export JAVA_HOME=~/usr/libexec/java_home
+
+# VSCODE
+export PATH=${PATH}:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
