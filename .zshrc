@@ -129,4 +129,6 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 # export JAVA_HOME=~/usr/libexec/java_home
 
 # VSCODE
-export PATH=${PATH}:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+export PATH=${PATH}:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"binexport PATH="/usr/local/opt/python@3.8/bin:$PATH"
+export PATH=${PATH}:/usr/local/bin/git-file-size-diff

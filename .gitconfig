@@ -38,6 +38,9 @@
 	spo = stash pop
 	spu = stash push
 
+	# cherry-pick
+	ch = cherry-pick
+
 	# temporary ignore files
 	hide = update-index --assume-unchanged
 	unhide = update-index --no-assume-unchanged
@@ -61,3 +64,5 @@
 	smudge = git-lfs smudge -- %f
 [commit]
 	template = /Users/user/.stCommitMsg
+[credential]
+	helper = osxkeychain
