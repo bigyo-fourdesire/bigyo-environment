@@ -48,6 +48,9 @@
 	hidden = !git ls-files -v | grep \"^[a-z]\"
 	ignored = !git status -s --ignored | grep \"^!!\"
 
+	# git flow 
+	finish = "!f() { git br -D ${1}; git push origin :${1}; }; f"
+	start = "!f() { git co -b ${1}-${2} ${1}; }; f"
 
 [core]
 	excludesfile = /Users/user/.gitignore_global
