@@ -3,9 +3,10 @@
 - iterm
 - ssh key-gen
 - zsh
-    - oh-my-zsh (https://github.com/ohmyzsh/ohmyzsh)
-    - zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
+    - zim
+    - zsh-autosuggestions (included in zim)
     - p10k
+    - z (autocompletion of path)
 - bigyo-environment
     - git-config
   
