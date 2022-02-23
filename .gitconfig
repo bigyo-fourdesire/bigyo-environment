@@ -50,7 +50,11 @@
 
 	# git flow 
 	finish = "!f() { git br -D ${1}; git push origin :${1}; }; f"
-	start = "!f() { git co -b ${1}-${2} ${1}; }; f"
+	start = "!f() { git co ${1}; git fetch; git pull; git co -b ${1}-${2} ${1}; }; f"
+
+	# git tag
+	tagPo = "!f() { git tag ${1}; git push origin ${1}; }; f"
+	recreate = "!f() { git br -D ${1}; git co -b ${1}; }; f"
 
 [core]
 	excludesfile = /Users/user/.gitignore_global
